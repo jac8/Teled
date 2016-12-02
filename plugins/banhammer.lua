@@ -116,18 +116,18 @@ local function kick_ban_res(extra, success, result)
 			send_large_msg(receiver, "You can't ban mods/owner/admins")
 			return
         end
-        send_large_msg(receiver, 'کاربر  @'..member..' ['..member_id..'] بن شد.')
+        send_large_msg(receiver, 'User @'..member..' ['..member_id..'] Banned.')
 		ban_user(member_id, chat_id)
       elseif get_cmd == 'unban' then
-        send_large_msg(receiver, 'کاربر @'..member..' ['..member_id..'] بن شد.')
+        send_large_msg(receiver, 'User @'..member..' ['..member_id..'] Banned.')
         local hash =  'banned:'..chat_id
         redis:srem(hash, member_id)
         return 'User '..user_id..' unbanned'
       elseif get_cmd == 'banall' then
-        send_large_msg(receiver, 'کابر @'..member..' ['..member_id..'] به لیست بن گلوبال پیوست.')
+        send_large_msg(receiver, 'User @'..member..' ['..member_id..'] Add To Globally List.')
 		banall_user(member_id)
       elseif get_cmd == 'unbanall' then
-        send_large_msg(receiver, 'کاربر @'..member..' ['..member_id..'] از لیست گلوبال خارج شد.')
+        send_large_msg(receiver, 'User @'..member..' ['..member_id..'] Removed To Globally List.')
 	    unbanall_user(member_id)
     end
 end
@@ -136,7 +136,7 @@ local function run(msg, matches)
 local support_id = msg.from.id
  if matches[1]:lower() == 'id' and msg.to.type == "chat" or msg.to.type == "user" then
     if msg.to.type == "user" then
-      return "ایدی بات: "..msg.to.id.. "\n\nایدی شما: "..msg.from.id
+      return "Bot ID: "..msg.to.id.. "\n\nYour ID: "..msg.from.id
     end
     if type(msg.reply_id) ~= "nil" then
       local print_name = user_print_name(msg.from):gsub("‮", "")
