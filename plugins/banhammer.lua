@@ -287,7 +287,7 @@ end
          	return false
         end
         	banall_user(targetuser)
-       		return 'User ['..user_id..' ] globally banned'
+       		return 'User ['..user_id..' ] Add To Globally List.'
      else
 	local cbres_extra = {
 		chat_id = msg.to.id,
@@ -307,7 +307,7 @@ end
           	return false
         end
        		unbanall_user(user_id)
-        	return 'User ['..user_id..' ] globally unbanned'
+        	return 'User ['..user_id..' ] Removed To Globally List.'
     else
 		local cbres_extra = {
 			chat_id = msg.to.id,
