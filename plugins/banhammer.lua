@@ -170,7 +170,7 @@ local support_id = msg.from.id
     end
     return ban_list(chat_id)
   end
-  if matches[1]:lower() == 'ban' or matches[1] =='بن' then-- /ban
+  if matches[1]:lower() == 'ban' or matches[1] =='سیک' then-- /ban
     if type(msg.reply_id)~="nil" and is_momod(msg) then
       if is_admin1(msg) then
 		msgr = get_message(msg.reply_id,ban_by_reply_admins, false)
@@ -208,7 +208,7 @@ local support_id = msg.from.id
   end
 
 
-  if matches[1]:lower() == 'unban' or matches[1] =='خ بن' then -- /unban
+  if matches[1]:lower() == 'unban' or matches[1] =='خ سیک' then -- /unban
     if type(msg.reply_id)~="nil" and is_momod(msg) then
       local msgr = get_message(msg.reply_id,unban_by_reply, false)
     end
@@ -340,9 +340,9 @@ return {
     "^[!#/](لیست بن)$",
     "^[!#/](لیست گلوبال بن)$",
     "^[!#/](اخراج)$",
-	"^[!#/](بن)$",
-    "^[!#/](بن) (.*)$",
-    "^[!#/](خ بن) (.*)$",
+	"^[!#/](سیک)$",
+    "^[!#/](سیک) (.*)$",
+    "^[!#/](خ سیک) (.*)$",
     "^[!#/](خ گلوبال بن) (.*)$",
     "^[!#/](خ گلوبال بن)$",
     "^[!#/](اخراج) (.*)$",
