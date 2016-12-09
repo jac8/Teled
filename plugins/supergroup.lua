@@ -2238,7 +2238,7 @@ local function run(msg, matches)
 				resolve_username(username,  callbackres, cbres_extra)
 			else
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup ID")
-				text = "Gp Name: " ..string.gsub(msg.to.print_name, "_", " ").. "/n Gp ID: "..msg.to.id
+				text = "Gp Name: " ..string.gsub(msg.to.print_name, "_", " ").. "         Gp ID: "..msg.to.id
 	reply_msg(msg.id, text, ok_cb, false)
 end
 		end
